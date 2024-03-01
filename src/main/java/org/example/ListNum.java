@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ListNum extends Validaciones{
-    List<Integer> numeros = new ArrayList<>();
+    private ArrayList<Integer> numeros = new ArrayList<>();
     Scanner sc = new Scanner(System.in);
-    int esperado;
+    private int esperado;
     void imputNumeros(){
         do{
             if(getBol())
@@ -16,7 +16,7 @@ public class ListNum extends Validaciones{
             sc = new Scanner(System.in);
             valScanner(sc);
             if(!getBol())
-                esperado = getI();
+                this.esperado = getI();
         }while (getBol());
 
         do {
@@ -35,5 +35,16 @@ public class ListNum extends Validaciones{
             }while (!getBol());
             setBol(false);
         }while (getBol());
+
     }
+
+    public int getEsperado(){
+        return esperado;
+    }
+
+    public ArrayList<Integer> getNumeros(){
+        return numeros;
+    }
+
+
 }
