@@ -37,7 +37,6 @@ public class ListNum extends Validaciones{
         }while (getBol());
 
     }
-
     public int getEsperado(){
         return esperado;
     }
