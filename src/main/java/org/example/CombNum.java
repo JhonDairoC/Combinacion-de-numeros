@@ -3,37 +3,44 @@ package org.example;
 import java.util.ArrayList;
 
 public class CombNum extends ListNum{
-    boolean bol;
     int num1;
     int num2;
+    ArrayList<Integer> numUsuados = new ArrayList<>();
     void comboSuma(int num1, int num2, int esperado){
-        this.bol = num1 + num2 == esperado;
-        if (bol)
+        if (num1 + num2 == esperado) {
             System.out.println("Combinación para " + esperado + ": " + num1 + "+" + num2);
+            numUsuados.add(num1);
+            numUsuados.add(num2);
+        }
 
     }
     void comboRest(int num1, int num2, int esperado){
-        this.bol = num1 - num2 == esperado;
-        if (bol)
+        if (num1 - num2 == esperado) {
             System.out.println("Combinación para " + esperado + ": " + num1 + "-" + num2);
+            numUsuados.add(num1);
+            numUsuados.add(num2);
+        }
     }
-
     void comboMulti(int num1, int num2, int esperado){
-        this.bol = num1 * num2 == esperado;
-        if (bol)
+        if (num1 * num2 == esperado) {
             System.out.println("Combinación para " + esperado + ": " + num1 + "*" + num2);
+            numUsuados.add(num1);
+            numUsuados.add(num2);
+        }
     }
-
     void comboDiv(int num1, int num2, int esperado){
-        this.bol = num1 / num2 == esperado;
-        if (bol)
+        if (num1 / num2 == esperado) {
             System.out.println("Combinación para " + esperado + ": " + num1 + "/" + num2);
+            numUsuados.add(num1);
+            numUsuados.add(num2);
+        }
     }
-
     void comboPorc(int num1, int num2, int esperado){
-        this.bol = num1 % num2 == esperado;
-        if (bol)
+        if (num1 % num2 == esperado) {
             System.out.println("Combinación para " + esperado + ": " + num1 + "%" + num2);
+            numUsuados.add(num1);
+            numUsuados.add(num2);
+        }
     }
     void calcular(ArrayList<Integer> num, int esperado){
         for(int i = 0; i < num.size(); i++){
@@ -45,13 +52,10 @@ public class CombNum extends ListNum{
                 comboMulti(num1, num2, esperado);
                 comboDiv(num1, num2, esperado);
                 comboPorc(num1, num2, esperado);
-                if (bol) {
-                    num.remove(i);
-                    num.remove(j);
-                    j--;
-                }
             }
         }
+        System.out.println(num);
+        num.removeAll(numUsuados);
         System.out.println("numeros uen no pueden ser convinados");
         System.out.println(num);
     }
