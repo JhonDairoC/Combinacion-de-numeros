@@ -2,9 +2,7 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        ListNum listadoNumeros = new ListNum();
+        ListadoDeNumeros listadoNumeros = new ListadoDeNumeros();
         listadoNumeros.imputNumeros();
-        CombNum combNum = new CombNum();
-        combNum.calcular(listadoNumeros.getNumeros(), listadoNumeros.getEsperado());
     }
 }

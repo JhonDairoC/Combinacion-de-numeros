@@ -1,22 +1,42 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Validaciones {
-    private boolean bol;
-    private int i;
+    private boolean bol = true;
+    private int numeroEsperado;
     public boolean getBol(){
         return bol;
     }
+
+    StringBuilder error = new StringBuilder();
     void valScanner(Scanner sc) {
-        this.bol = !sc.hasNextInt() || (i = sc.nextInt()) <= 0;
+        if(sc.hasNextInt()){
+            error = new StringBuilder();
+            numeroEsperado = sc.nextInt();
+            this.bol = !(numeroEsperado <= 0);
+        } else {
+            error = new StringBuilder("Ingrese un numero valido");
+            this.bol = false;
+        }
+
     }
 
-    public int getI(){
-        return i;
+    public int getNumeroEsperado(){
+        return numeroEsperado;
     }
 
     void setBol(boolean bol){
         this.bol = bol;
+    }
+
+    public boolean validacionCombinacion(ArrayList<Integer> array1, ArrayList<Integer>array2){
+        if(array1.equals(array2)){
+            error = new StringBuilder("Los nuemeros ingresados no pueden ser combinados inetenta nuevamente");
+        }else {
+            error = new StringBuilder();
+        }
+        return this.bol = !array1.equals(array2);
     }
 }
