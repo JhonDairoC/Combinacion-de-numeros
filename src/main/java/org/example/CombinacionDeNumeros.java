@@ -7,7 +7,7 @@ public class CombinacionDeNumeros {
     Integer num2;
     ArrayList<Integer> numUsuados = new ArrayList<>();
     int esperado;
-    void combinacionSuma(){
+    void combinarSuma(){
         if (num1 + num2 == esperado) {
             System.out.println("Combinación para " + esperado + ": " + num1 + "+" + num2);
             numUsuados.remove(num1);
@@ -15,21 +15,21 @@ public class CombinacionDeNumeros {
         }
 
     }
-    void combinacionResta(){
+    void combinarResta(){
         if (num1 - num2 == esperado) {
             System.out.println("Combinación para " + esperado + ": " + num1 + "-" + num2);
             numUsuados.remove(num1);
             numUsuados.remove(num2);
         }
     }
-    void combinacionMultiplicacion(){
+    void combinarMultiplicacion(){
         if (num1 * num2 == esperado) {
             System.out.println("Combinación para " + esperado + ": " + num1 + "*" + num2);
             numUsuados.remove(num1);
             numUsuados.remove(num2);
         }
     }
-    void combinacionDivicion(){
+    void combinarDivicion(){
         if (num1 / num2 == esperado) {
             System.out.println("Combinación para " + esperado + ": " + num1 + "/" + num2);
             numUsuados.remove(num1);
@@ -48,10 +48,10 @@ public class CombinacionDeNumeros {
             for (int j = 1; j < numUsuados.size(); j++){
                 num1 = numUsuados.get(i-1);
                 num2 = numUsuados.get(j);
-                combinacionSuma();
-                combinacionResta();
-                combinacionMultiplicacion();
-                combinacionDivicion();
+                combinarSuma();
+                combinarResta();
+                combinarMultiplicacion();
+                combinarDivicion();
             }
         }
         System.out.println("numeros quen no pueden ser convinados");
