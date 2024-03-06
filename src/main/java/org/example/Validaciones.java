@@ -9,7 +9,6 @@ public class Validaciones {
     public boolean getBol(){
         return bol;
     }
-
     StringBuilder error = new StringBuilder();
     void valScanner(Scanner sc) {
         if(sc.hasNextInt()){
@@ -33,7 +32,7 @@ public class Validaciones {
 
     public boolean validacionCombinacion(ArrayList<Integer> array1, ArrayList<Integer>array2){
         if(array1.equals(array2)){
-            error = new StringBuilder("Los nuemeros ingresados no pueden ser combinados inetenta nuevamente");
+            error = new StringBuilder("Los nuemeros ingresados no pueden ser combinados ingresa mas numeros");
         }else {
             error = new StringBuilder();
         }

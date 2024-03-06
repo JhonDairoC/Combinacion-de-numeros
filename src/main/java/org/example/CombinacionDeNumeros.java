@@ -41,11 +41,12 @@ public class CombinacionDeNumeros {
         return numUsuados;
     }
     void calcular(ArrayList<Integer> num, int esperado){
+        System.out.println(num);
         numUsuados.addAll(num);
         this.esperado = esperado;
-        for(int i = 0; i < numUsuados.size(); i++){
-            for (int j = i + 1; j < numUsuados.size(); j++){
-                num1 = numUsuados.get(i);
+        for(int i = 1; i < numUsuados.size();i++){
+            for (int j = 1; j < numUsuados.size(); j++){
+                num1 = numUsuados.get(i-1);
                 num2 = numUsuados.get(j);
                 combinacionSuma();
                 combinacionResta();
