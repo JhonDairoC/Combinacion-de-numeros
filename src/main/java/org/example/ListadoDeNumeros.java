@@ -24,36 +24,58 @@ public class ListadoDeNumeros extends Validaciones{
                 System.out.println("Ingerese el numero esperado \nEl numero debe ser mayor a 0");
                 sc = new Scanner(System.in);
                 valScanner(sc);
-                if (getBol())
+                if (!getBol())
                     this.esperado = getNumeroEsperado();
-            } while (!getBol());
+            } while (getBol());
 
             System.out.println("Ingresa el listado de numeros para la comparativa");
             int i = 1;
 
             do {
-                if (!error.isEmpty()) {
+                if (!error.isEmpty())
                     System.err.println(error);
-                }
-
                 System.out.println("Para salir del bucle escribe el numero '0'");
                 System.out.println("Ingresa el numero en la posicion " + i);
                 sc = new Scanner(System.in);
                 valScanner(sc);
 
-                if (getNumeroEsperado() == 0) {
+                validation:if (getNumeroEsperado() == 0) {
                     combinacionDeNumeros.calcular(getNumeros(), getEsperado());
                     if (validacionCombinacion(getNumeros(), combinacionDeNumeros.getNumUsados())) {
-                        break;
+                        combinacionDeNumeros.numUsuados.clear();
+                        break validation;
                     }
                 } else {
-                    if (getBol()) {
+                    if (!getBol()) {
                         numeros.add(getNumeroEsperado());
                         i += 1;
-                        setBol(false);
-
+                        setBol(true);
                     }
                 }
-            } while (!getBol());
+            } while (getBol());
+
+        do {
+            if(!getBol())
+                System.err.println("Ingrese un numero valido");
+
+            System.out.println("\nQuieres intentarlo de nuevo?");
+            System.out.println("1. Si");
+            System.out.println("2. No");
+            sc = new Scanner(System.in);
+            if (sc.hasNextInt()) {
+                i = sc.nextInt();
+                if (i == 1){
+                    numeros.clear();
+                    combinacionDeNumeros.numUsuados.clear();
+                    imputNumeros();
+                } else if (i == 2) {
+                    break;
+                }else {
+                    setBol(false);
+                }
+            }else{
+                setBol(false);
+            }
+        }while (!getBol());
     }
 }

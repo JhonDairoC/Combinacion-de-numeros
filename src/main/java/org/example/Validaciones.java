@@ -14,10 +14,13 @@ public class Validaciones {
         if(sc.hasNextInt()){
             error = new StringBuilder();
             numeroEsperado = sc.nextInt();
-            this.bol = !(numeroEsperado <= 0);
+            this.bol = (numeroEsperado <= 0);
+            if(getBol()){
+                error = new StringBuilder("Ingrese un numero valido");
+            }
         } else {
             error = new StringBuilder("Ingrese un numero valido");
-            this.bol = false;
+            this.bol = true;
         }
 
     }
@@ -36,6 +39,6 @@ public class Validaciones {
         }else {
             error = new StringBuilder();
         }
-        return this.bol = !array1.equals(array2);
+        return this.bol = array1.equals(array2);
     }
 }
