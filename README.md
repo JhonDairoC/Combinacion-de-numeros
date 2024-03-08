@@ -1,13 +1,14 @@
 # Descripcion:
-- Programa para realizar posibles combinaciones de un listado de numeros buscando un numero especifico que digitara el usuario, el listado de numeros tambien sera digitado por el usuario
+- El programa busca encontrar todas las combinaciones posibles de un conjunto de números, donde su resultado sea un valor específico dado por el usuario.
   
 # Pasos para ejecucion
-  1. El usuario digitara un numero entero positivo que sera aquel que se buscara como resultado de las posibles combinaciones
-  2. Se le pedira al usuario un listado de numeros enteros positivos para realizar las posibles combinaciones usando operaciones basicas
-      - Suma(+)
-      - Resta(-)
-      - Multiplicacion(*)
-      - Divicion(/)
+1. El usuario ingresara el numero que se desea alcanzar con las combinaciones.
+2. El usuario ingresara una lista de numeros enteros
+3. El programa usara operaciones basicas para alcanzar dicho numero digitado por el usuario
+    - Suma(+)
+    - Resta(-)
+    - Multiplicacion(*)
+    - Divicion(/)
 # Validaciones
   1. El programa no admitira letras, caracteres especiales, numeros negativos y numeros decimales
   2. Los numeros que se puedan combinar solo seran usados 1 vez y removidos de la lista de numeros
