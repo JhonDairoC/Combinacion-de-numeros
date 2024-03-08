@@ -14,7 +14,7 @@ public class Validaciones {
         if(sc.hasNextInt()){
             error = new StringBuilder();
             numeroEsperado = sc.nextInt();
-            this.bol = (numeroEsperado <= 0);
+            this.bol = (numeroEsperado == 0);
             if(getBol()){
                 error = new StringBuilder("Ingrese un numero valido");
             }

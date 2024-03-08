@@ -33,7 +33,7 @@ public class ListadoDeNumeros extends Validaciones{
             do {
                 if (!error.isEmpty())
                     System.err.println(error);
-                System.out.println("\nPara salir del bucle escribe el numero '0'");
+                System.out.println("\nPara obtener el resultado digita el numero '0'");
                 System.out.println("Ingresa el numero entero en la posicion " + i);
                 sc = new Scanner(System.in);
                 validarScanner(sc);
@@ -47,6 +47,8 @@ public class ListadoDeNumeros extends Validaciones{
                 } else {
                     if (!getBol()) {
                         numeros.add(getNumeroEsperado());
+                        System.out.println("El numero espérado es: "+esperado);
+                        System.out.println("Los numeros ingreados son: ".concat(numeros.toString()));
                         i += 1;
                         setBol(true);
                     }
