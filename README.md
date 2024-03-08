@@ -15,5 +15,6 @@
   3. Si ningun numero del listado que digito el usuario se puede combinar se le mostrara un mensaje de error y se le pedira que digite mas numeros sin eliminar la lista
 
 # Diagrama
-- ![Combinacion de numeros drawio (2)](https://github.com/JhonDairoC/Combinacion-de-numeros/assets/101678630/d6375d42-7aef-4da9-9e11-e90c68d59aaa)
+- ![Combinacion de numeros drawio (3)](https://github.com/JhonDairoC/Combinacion-de-numeros/assets/101678630/613ccb2d-f0d3-4f5a-8e41-de60d3a2ce24)
+
 
