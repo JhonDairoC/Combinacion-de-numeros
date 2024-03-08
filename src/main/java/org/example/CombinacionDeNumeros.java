@@ -46,13 +46,13 @@ public class CombinacionDeNumeros {
         return num1 / num2 == esperado;
     }
 
-    protected ArrayList<Integer> getNumUsados(){
+    public ArrayList<Integer> getNumUsados(){
         return numUsuados;
     }
-    void calcular(ArrayList<Integer> num, int esperado){
+    void calcular(ArrayList<Integer> numeros, int numeroEsperado){
         this.i = 0;
-        numUsuados.addAll(num);
-        this.esperado = esperado;
+        numUsuados.addAll(numeros);
+        this.esperado = numeroEsperado;
         for(; i < numUsuados.size();i++){
             interno:for (int j = 1; j < numUsuados.size();j++){
                 num1 = numUsuados.get(i);

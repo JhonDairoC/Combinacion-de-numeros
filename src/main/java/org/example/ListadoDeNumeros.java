@@ -6,7 +6,6 @@ public class ListadoDeNumeros extends Validaciones{
     private ArrayList<Integer> numeros = new ArrayList<>();
     Scanner sc = new Scanner(System.in);
     private int esperado;
-
     CombinacionDeNumeros combinacionDeNumeros = new CombinacionDeNumeros();
 
     public int getEsperado(){
@@ -23,25 +22,25 @@ public class ListadoDeNumeros extends Validaciones{
                 }
                 System.out.println("Ingerese el numero esperado \nEl numero debe ser mayor a 0");
                 sc = new Scanner(System.in);
-                valScanner(sc);
+                validarScanner(sc);
                 if (!getBol())
                     this.esperado = getNumeroEsperado();
             } while (getBol());
 
-            System.out.println("Ingresa el listado de numeros para la comparativa");
+            System.out.println("Ingresa el listado de numeros enteros para la comparativa");
             int i = 1;
 
             do {
                 if (!error.isEmpty())
                     System.err.println(error);
-                System.out.println("Para salir del bucle escribe el numero '0'");
-                System.out.println("Ingresa el numero en la posicion " + i);
+                System.out.println("\nPara salir del bucle escribe el numero '0'");
+                System.out.println("Ingresa el numero entero en la posicion " + i);
                 sc = new Scanner(System.in);
-                valScanner(sc);
+                validarScanner(sc);
 
                 validation:if (getNumeroEsperado() == 0) {
                     combinacionDeNumeros.calcular(getNumeros(), getEsperado());
-                    if (validacionCombinacion(getNumeros(), combinacionDeNumeros.getNumUsados())) {
+                    if (validarCombinacion(getNumeros(), combinacionDeNumeros.getNumUsados())) {
                         combinacionDeNumeros.numUsuados.clear();
                         break validation;
                     }
@@ -55,7 +54,7 @@ public class ListadoDeNumeros extends Validaciones{
             } while (getBol());
 
         do {
-            if(!getBol())
+            if(!error.isEmpty())
                 System.err.println("Ingrese un numero valido");
 
             System.out.println("\nQuieres intentarlo de nuevo?");
@@ -69,6 +68,7 @@ public class ListadoDeNumeros extends Validaciones{
                     combinacionDeNumeros.numUsuados.clear();
                     imputNumeros();
                 } else if (i == 2) {
+                    setBol(true);
                     break;
                 }else {
                     setBol(false);

@@ -6,11 +6,11 @@ import java.util.Scanner;
 public class Validaciones {
     private boolean bol = true;
     private int numeroEsperado;
+    StringBuilder error = new StringBuilder();
     public boolean getBol(){
         return bol;
     }
-    StringBuilder error = new StringBuilder();
-    void valScanner(Scanner sc) {
+    void validarScanner(Scanner sc) {
         if(sc.hasNextInt()){
             error = new StringBuilder();
             numeroEsperado = sc.nextInt();
@@ -24,16 +24,14 @@ public class Validaciones {
         }
 
     }
-
+    void setBol(boolean bol){
+        this.bol = bol;
+    }
     public int getNumeroEsperado(){
         return numeroEsperado;
     }
 
-    void setBol(boolean bol){
-        this.bol = bol;
-    }
-
-    public boolean validacionCombinacion(ArrayList<Integer> array1, ArrayList<Integer>array2){
+    public boolean validarCombinacion(ArrayList<Integer> array1, ArrayList<Integer>array2){
         if(array1.equals(array2)){
             error = new StringBuilder("Los nuemeros ingresados no pueden ser combinados ingresa mas numeros");
         }else {
