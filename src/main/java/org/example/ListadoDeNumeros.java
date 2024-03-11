@@ -20,7 +20,7 @@ public class ListadoDeNumeros extends Validaciones{
                 if (!error.isEmpty()) {
                     System.err.println(error);
                 }
-                System.out.println("Ingerese el numero esperado \nEl numero debe ser mayor a 0");
+                System.out.println("Ingerese el numero esperado \nEl numero debe ser mayor o menor a 0");
                 sc = new Scanner(System.in);
                 validarScanner(sc);
                 if (!getBol())
