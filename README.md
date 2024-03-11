@@ -10,7 +10,7 @@
     - Multiplicacion(*)
     - Divicion(/)
 # Validaciones
-  1. El programa no admitira letras, caracteres especiales, numeros negativos y numeros decimales
+  1. El programa no admitira letras, caracteres especiales y numeros decimales
   2. Los numeros que se puedan combinar solo seran usados 1 vez y removidos de la lista de numeros
   3. Si ningun numero del listado que digito el usuario se puede combinar se le mostrara un mensaje de error y se le pedira que digite mas numeros sin eliminar la lista
 
